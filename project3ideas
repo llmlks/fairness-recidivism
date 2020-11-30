@@ -1,0 +1,45 @@
+1. Race affects: count of priors (if system is racist), criminal charge names
+	- Poor family -> more criminality
+	- Poor neighbourhood -> more policing -> higher likelihood of getting caught and getting charges
+	- Discriminatory laws related to crimes committed by different ethnic communities
+
+
+2. Sex affects: Less data
+	- Lower sentences for same crimes for women
+	- Traditional gender roles: women stay at home, while men provide
+
+
+3. Age affects: count of priors
+	- The older a person is, the more likely they have a higher number of priors
+
+
+4. Assumptions
+	- Juvenile priors are not included in the prior counts (because some states give less weight to juvenile priors)
+	
+
+5. Questions:
+	- Should juvenile crimes affect the scoring?
+	- Does the meaning of prior count depend on the person's age?
+	- Is it more meaningful that a person has no priors if they are old?
+	- Should the loss be symmetric (which is worse, False Positive or False Negative)
+
+
+6. Check for refences:
+	- Sentencing length for genders
+	
+
+
+7. Should time of arrest/crime/etc be a factor (because of changing laws and social climate)
+
+
+8. Difference between two_years_recid and is_recid? Original analysis by propublica uses two_years_recid for analysis and is_recid for filtering
+
+	Free	Jail
+		
+	TP	FN
+
+	FP	TN
+
+
+Sufficiency vs independence vs specificity
+
