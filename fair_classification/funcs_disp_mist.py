@@ -118,9 +118,9 @@ def train_model_disp_mist(x, y, x_control, loss_function, EPS, cons_params=None)
 
 
     # check that the fairness constraint is satisfied
-    for f_c in constraints:
-#        assert(f_c.value == True) # can comment this out if the solver fails too often, but make sure that the constraints are satisfied empirically. alternatively, consider increasing tau parameter
-        pass
+    # for f_c in constraints:
+    #     assert(f_c.value == True) # can comment this out if the solver fails too often, but make sure that the constraints are satisfied empirically. alternatively, consider increasing tau parameter
+    #     pass
         
 
     w = np.array(w.value).flatten() # flatten converts it to a 1d array
@@ -168,7 +168,10 @@ def get_clf_stats(w, x_train, y_train, x_control_train, x_test, y_test, x_contro
         cov_all_test[s_attr] = get_sensitive_attr_constraint_fpr_fnr_cov(None, x_test, y_test, distances_boundary_test, x_control_test[s_attr]) 
         print("\n")
 
-    return train_score, test_score, cov_all_train, cov_all_test, s_attr_to_fp_fn_train, s_attr_to_fp_fn_test
+    return (
+        train_score, test_score, cov_all_train, cov_all_test, s_attr_to_fp_fn_train, s_attr_to_fp_fn_test,
+        all_class_labels_assigned_train, all_class_labels_assigned_test
+    )
 
 def get_distance_boundary(w, x, s_attr_arr):
 
